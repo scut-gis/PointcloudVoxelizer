@@ -1,7 +1,6 @@
 
 import mayavi.mlab
 import numpy as np
-import tqdm
 import h5py
 from os import sys
 
@@ -13,7 +12,7 @@ data = data['default'][:]
 
 xx, yy, zz, sub = np.where(data != 0)
 
-print xx.shape, sub.shape
+print(xx.shape, sub.shape)
 
 rgbs = [(0,0,0)]*len(xx)
 labels = [0]*len(xx)
@@ -24,7 +23,7 @@ for count in range(len(xx)):
 
 rgbs = np.array(rgbs)
 labels = np.array(labels)
-print rgbs.shape, labels.shape
+print(rgbs.shape, labels.shape)
 
 nodes = mayavi.mlab.points3d(xx, yy, zz, mode="cube", scale_factor=0.8)
 
